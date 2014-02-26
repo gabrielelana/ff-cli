@@ -1,0 +1,5 @@
+= ff
+
+Generate this with
+    ff rdoc
+After you have described your command line interface
