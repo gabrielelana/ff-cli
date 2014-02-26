@@ -2,7 +2,7 @@
 require File.join([File.dirname(__FILE__),'lib','ff','version.rb'])
 spec = Gem::Specification.new do |s|
   s.name = 'ff-cli'
-  s.version = Ff::VERSION
+  s.version = FF::VERSION
   s.author = 'Gabriele Lana'
   s.email = 'gabriele.lana@gmail.com'
   s.homepage = 'https://github.com/gabrielelana/ff-cli'

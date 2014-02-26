@@ -13,7 +13,7 @@ include GLI::App
 
 program_desc 'Describe your application here'
 
-version Ff::VERSION
+version FF::VERSION
 
 desc 'Describe some switch here'
 switch [:s,:switch]
@@ -35,7 +35,7 @@ command :create do |c|
   c.action do |global_options,options,args|
 
     # Your command logic here
-     
+
     # If you have any errors, just raise them
     # raise "that command made no sense"
 

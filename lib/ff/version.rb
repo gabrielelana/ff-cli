@@ -1,3 +1,3 @@
-module Ff
+module FF
   VERSION = '0.0.1'
 end
