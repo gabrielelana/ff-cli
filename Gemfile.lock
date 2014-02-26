@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ff (0.0.1)
+    ff-cli (0.0.1)
       gli (= 2.9.0)
 
 GEM
@@ -39,6 +39,6 @@ PLATFORMS
 
 DEPENDENCIES
   aruba
-  ff!
+  ff-cli!
   rake
   rdoc

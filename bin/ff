@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require 'gli'
 begin # XXX: Remove this begin/rescue before distributing your app
 require 'ff'
@@ -15,49 +16,20 @@ program_desc 'Describe your application here'
 
 version FF::VERSION
 
-desc 'Describe some switch here'
-switch [:s,:switch]
+# desc 'Describe some switch here'
+# switch [:s,:switch]
 
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
+FF::PROFILES_PREFIX = 'ff-cli.'
 
-desc 'Describe create here'
-arg_name 'Describe arguments to create here'
-command :create do |c|
-  c.desc 'Describe a switch to create'
-  c.switch :s
+# TODO: must be cross platform + deal with error conditions
+FF::BINARY_PATH = ENV['FIREFOX_BINARY_PATH'] || '/usr/bin/firefox'
+FF::PROFILES_PATH = ENV['FIREFOX_PROFILES_PATH'] || File.join(
+  ENV['HOME'] || ENV['HOMEPATH'] || ENV['USERPROFILE'], '.mozilla', 'firefox'
+)
 
-  c.desc 'Describe a flag to create'
-  c.default_value 'default'
-  c.flag :f
-  c.action do |global_options,options,args|
-
-    # Your command logic here
-
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
-    puts "create command ran"
-  end
-end
-
-desc 'Describe start here'
-arg_name 'Describe arguments to start here'
-command :start do |c|
-  c.action do |global_options,options,args|
-    puts "start command ran"
-  end
-end
-
-desc 'Describe destroy here'
-arg_name 'Describe arguments to destroy here'
-command :destroy do |c|
-  c.action do |global_options,options,args|
-    puts "destroy command ran"
-  end
-end
+require 'ff/commands/create.rb'
+require 'ff/commands/destroy.rb'
+require 'ff/commands/start.rb'
 
 pre do |global,command,options,args|
   # Pre logic here
