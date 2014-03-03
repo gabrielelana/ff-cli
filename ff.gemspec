@@ -17,6 +17,8 @@ spec = Gem::Specification.new do |s|
   s.executables << 'ff'
   s.add_development_dependency('rake')
   s.add_development_dependency('rdoc')
+  s.add_development_dependency('rspec')
   s.add_development_dependency('aruba')
   s.add_runtime_dependency('gli','2.9.0')
+  s.add_runtime_dependency('inifile','~> 2.0')
 end

@@ -24,6 +24,7 @@ FF::PROFILES_PATH = ENV['FIREFOX_PROFILES_PATH'] || File.join(
   ENV['HOME'] || ENV['HOMEPATH'] || ENV['USERPROFILE'], '.mozilla', 'firefox'
 )
 
+require 'ff/commands/about.rb'
 require 'ff/commands/create.rb'
 require 'ff/commands/destroy.rb'
 require 'ff/commands/start.rb'
