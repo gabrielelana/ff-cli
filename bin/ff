@@ -19,9 +19,9 @@ version FF::VERSION
 # desc 'Describe some switch here'
 # switch [:s,:switch]
 
-c.desc 'Profile'
-c.arg_name 'name or path'
-c.flag [:p, :profile]
+desc 'Profile'
+arg_name 'name or path'
+flag [:p, :profile]
 
 FF::PROFILES_PREFIX = 'ff-cli.'
 
