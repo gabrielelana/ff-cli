@@ -4,6 +4,7 @@ require 'delegate'
 module FF
 
   class DefaultProfileNotFound < Exception; end
+  class ProfileNotFound < Exception; end
 
   class Profiles
     def initialize(configuration, root)
@@ -27,8 +28,10 @@ module FF
     end
 
     def select(name_or_path = nil)
-      return default if name_or_path.nil?
-      select_by_name(name_or_path) || select_by_path(name_or_path) || create(name_or_path)
+      select_by_default(name_or_path) or
+        select_by_name(name_or_path) or
+        select_by_path(name_or_path) or
+        raise ProfileNotFound.new("No profile '#{name_or_path}' found in '#{@root}'")
     end
 
     def create(name_or_path)
@@ -58,6 +61,10 @@ module FF
           section.path == path || section.absolute_path == path
         end
       )
+    end
+
+    def select_by_default(name_or_path)
+      default if name_or_path.nil?
     end
 
     def create_profile_from_section(section)

@@ -22,10 +22,6 @@ describe FF::Profiles do
 
   subject {profile}
 
-  it 'works' do
-  end
-
-
   describe '#select' do
     it 'selects profiles by name' do
       expect(subject.select('default')).to be_instance_of(FF::Profile)
@@ -47,15 +43,9 @@ describe FF::Profiles do
       expect(subject.select.name).to eql 'default'
     end
 
-    context 'a missing profile by name' do
-      it 'creates the profile' do
-        pending
-      end
-    end
-
-    context 'a missing profile by path' do
-      it 'creates the profile' do
-        pending
+    context 'a missing profile' do
+      it 'raises an exception' do
+        expect {subject.select('not-a-profile')}.to raise_error(FF::ProfileNotFound)
       end
     end
   end
