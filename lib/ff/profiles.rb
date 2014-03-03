@@ -1,6 +1,9 @@
 require 'inifile'
 require 'delegate'
 
+require 'ff/profile'
+require 'ff/profile_section_in_configuration.rb'
+
 module FF
 
   class DefaultProfileNotFound < Exception; end
@@ -73,7 +76,7 @@ module FF
 
     def profile_sections
       @configuration.sections
-        .map {|s| ProfileSection.new(@configuration[s], @root)}
+        .map {|s| ProfileSectionInConfiguration.new(@configuration[s], @root)}
         .keep_if {|s| s.profile?}
     end
   end

@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'ff/profile'
-require 'ff/profile_section.rb'
 require 'ff/profiles'
 
 describe FF::Profiles do

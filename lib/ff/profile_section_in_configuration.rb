@@ -1,5 +1,5 @@
 module FF
-  class ProfileSection
+  class ProfileSectionInConfiguration
     def initialize(section, root)
       @section = section
       @root = Pathname.new(root)

@@ -1,6 +1,6 @@
 require 'ff/version.rb'
 require 'ff/profile.rb'
-require 'ff/profile_section.rb'
+require 'ff/profile_section_in_configuration.rb'
 require 'ff/profiles.rb'
 
 # Add requires for other files you add to your project here, so
