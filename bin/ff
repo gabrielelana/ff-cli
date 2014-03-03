@@ -5,12 +5,9 @@ require 'ff'
 
 include GLI::App
 
-program_desc 'Describe your application here'
+program_desc 'Manage Firefox profiles'
 
 version FF::VERSION
-
-# desc 'Describe some switch here'
-# switch [:s,:switch]
 
 desc 'Profile'
 arg_name 'name or path'
@@ -50,4 +47,11 @@ on_error do |exception|
   true
 end
 
-exit run(ARGV)
+command_names = commands.reduce([]) do |names, entry|
+  _, command = entry
+  names << command.name.to_s
+  names += command.aliases.map(:to_s) if command.aliases
+  names
+end
+
+exit run(FF::Arguments.new(ARGV, command_names).adjust)

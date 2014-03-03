@@ -4,34 +4,35 @@ A command line tool to manage Firefox profiles
 # Why
 * To programmatically create profiles and install addons for web applications that I wish to run as desktop applications, example:
   ```
-  ff create --profile=github
-  ff set browser.startup.homepage "https://github.com/gabrielelana" --profile=github
-  ff addons install vimperator
+  ff github create
+  ff github set browser.startup.homepage "https://github.com/gabrielelana"
+  ff github addons install vimperator
 
-  alias ff-github='ff start --profile=github'
+  alias ff-github='ff github start'
   ```
 * To quickly create profiles to try things in a clean and controlled environment
-* To easily backup and restore my firefox setup
+* To easily backup and restore my Firefox setup
 
 # Commands
 Be mind that until I publish the gem this is not intended to be used :smile:
 
 ## Implemented ...well, sort of...
-* `create [--private] --profile=<NAME>`
-* `destroy --profile=<NAME>`
-* `start --profile=<NAME>`
+* `create`
+* `destroy`
+* `start`
+* `about`
 
-## To Be Implemented
-* `set <PREFERENCE_NAME> <PREFERENCE_VALUE> --profile=<NAME>`
-* `get [<PREFERENCE_NAME>] --profile=<NAME>`
-* `unset <PREFERENCE_NAME> --profile=<NAME>`
+## To be implemented
+* `set <PREFERENCE_NAME> <PREFERENCE_VALUE>`
+* `get [<PREFERENCE_NAME>]`
+* `unset <PREFERENCE_NAME>`
+* `use-as-default`
 * `addons`
-  * `install <ADDON> --profile=<NAME>`
-  * `uninstall <ADDON> --profile=<NAME>`
-  * `update [<ADDON>] --profile=<NAME>`
-  * `list --profile=<NAME>` lists all the installed addons
-  * `uninstall-all --profile=<NAME>`
-* `about --profile=<NAME>` detailed informations about the profile
-* `save --to/-t <FILENAME>.ffp [--only-configuration] --profile=<NAME>`
+  * `install <ADDON>`
+  * `uninstall <ADDON>`
+  * `update [<ADDON>]`
+  * `list`
+  * `uninstall-all`
+* `save --to/-t <FILENAME>.ffp [--only-configuration]`
 * `restore --from/-f <FILENAME>.ffp`
-* `list` lists all the available profiles
+* `list`

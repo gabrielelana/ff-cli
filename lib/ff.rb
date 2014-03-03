@@ -1,4 +1,5 @@
 require 'ff/version.rb'
+require 'ff/arguments.rb'
 require 'ff/profile.rb'
 require 'ff/profile_section_in_configuration.rb'
 require 'ff/profiles.rb'
