@@ -13,6 +13,11 @@ A command line tool to manage Firefox profiles
 * To quickly create profiles to try things in a clean and controlled environment
 * To easily backup and restore my Firefox setup
 
+# Platforms
+* Developed used and tested on GNU/Linux
+* Used and tested on OSX
+* Windows... Sorry guys, but contributions are welcome :smile:
+
 # Commands
 Be mind that until I publish the gem this is not intended to be used :smile:
 
